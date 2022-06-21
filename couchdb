@@ -1,0 +1,56 @@
+# Virtual Host configuration for keep.cococloud.co
+server {
+  server_name zanzibar.cococloud.co;
+
+  index index.html;
+  client_max_body_size 20M;
+
+  location / {
+    proxy_pass http://localhost:5984;
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Ssl on;
+  }
+
+  location ~ ^/(.*)_changes {
+      proxy_pass http://localhost:5984;
+      proxy_redirect off;
+      proxy_buffering off;
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+
+  location /analytics {
+    alias /var/www/analytics/_attachments;
+  }
+  
+  location /analytics-dev {
+    alias /var/www/analytics-dev/_attachments;
+    add_header Cache-Control "no-cache";
+  }
+
+  location /issues {
+    alias /var/www/issues;
+  }
+
+
+  listen [::]:443 ssl ipv6only=on; # managed by Certbot
+  listen 443 ssl; # managed by Certbot
+  ssl_certificate /etc/letsencrypt/live/zanzibar.cococloud.co/fullchain.pem; # managed by Certbot
+  ssl_certificate_key /etc/letsencrypt/live/zanzibar.cococloud.co/privkey.pem; # managed by Certbot
+  include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+
+server {
+  if ($host = zanzibar.cococloud.co) {
+      return 301 https://$host$request_uri;
+  } # managed by Certbot
+
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  server_name zanzibar.cococloud.co;
+  return 404; # managed by Certbot
+}
