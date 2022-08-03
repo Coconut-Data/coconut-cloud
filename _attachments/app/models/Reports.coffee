@@ -402,56 +402,56 @@ class Reports
 
           _.each cases, (specimen) ->
             caseLocation = specimen.locationBy(options.aggregationLevel) || "UNKNOWN"
-            data.identificationAndAbundance["ALL"].total.push specimen
-            data.identificationAndAbundance[caseLocation].total.push specimen
+            data.identificationAndAbundance["ALL"]?.total.push specimen
+            data.identificationAndAbundance[caseLocation]?.total.push specimen
             if(specimen.morphologicalIdentification is "An gambiae complex")
-              data.identificationAndAbundance[caseLocation].anGambiaeComplex.push specimen
-              data.identificationAndAbundance["ALL"].anGambiaeComplex.push specimen
-              data.vectorsPerMethodPerSite[caseLocation].totalAnGambiae.push specimen
-              data.vectorsPerMethodPerSite["ALL"].totalAnGambiae.push specimen
+              data.identificationAndAbundance[caseLocation]?.anGambiaeComplex.push specimen
+              data.identificationAndAbundance["ALL"]?.anGambiaeComplex.push specimen
+              data.vectorsPerMethodPerSite[caseLocation]?.totalAnGambiae.push specimen
+              data.vectorsPerMethodPerSite["ALL"]?.totalAnGambiae.push specimen
               if(specimen.methodOfCollection is "Pyrethrum-Spray Catch (PSC)")
-                data.vectorsPerMethodPerSite[caseLocation].pyrethrumSprayCatchAnGambiae.push specimen
-                data.vectorsPerMethodPerSite["ALL"].pyrethrumSprayCatchAnGambiae.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.pyrethrumSprayCatchAnGambiae.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.pyrethrumSprayCatchAnGambiae.push specimen
               if(specimen.methodOfCollection is "Human-Landing Catch (HLC)")
-                data.vectorsPerMethodPerSite[caseLocation].humanLandingCatchAnGambiae.push specimen
-                data.vectorsPerMethodPerSite["ALL"].humanLandingCatchAnGambiae.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.humanLandingCatchAnGambiae.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.humanLandingCatchAnGambiae.push specimen
               if(specimen.methodOfCollection is "Pit-trap Catches (PTC)")
-                data.vectorsPerMethodPerSite[caseLocation].pitTrapAnGambiae.push specimen
-                data.vectorsPerMethodPerSite["ALL"].pitTrapAnGambiae.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.pitTrapAnGambiae.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.pitTrapAnGambiae.push specimen
               if(specimen.methodOfCollection is "CDC-Light Trap Catches(LTC)")
-                data.vectorsPerMethodPerSite[caseLocation].cdcLightTrapAnGambiae.push specimen
-                data.vectorsPerMethodPerSite["ALL"].cdcLightTrapAnGambiae.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.cdcLightTrapAnGambiae.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.cdcLightTrapAnGambiae.push specimen
             if(specimen.morphologicalIdentification is "An funestus")
-              data.identificationAndAbundance[caseLocation].anFunestus.push specimen
-              data.identificationAndAbundance["ALL"].anFunestus.push specimen
-              data.vectorsPerMethodPerSite[caseLocation].totalAnFunestus.push specimen
-              data.vectorsPerMethodPerSite["ALL"].totalAnFunestus.push specimen
+              data.identificationAndAbundance[caseLocation]?.anFunestus.push specimen
+              data.identificationAndAbundance["ALL"]?.anFunestus.push specimen
+              data.vectorsPerMethodPerSite[caseLocation]?.totalAnFunestus.push specimen
+              data.vectorsPerMethodPerSite["ALL"]?.totalAnFunestus.push specimen
               if(specimen.methodOfCollection is "Pyrethrum-Spray Catch (PSC)")
-                data.vectorsPerMethodPerSite[caseLocation].pyrethrumSprayCatchAnFunestus.push specimen
-                data.vectorsPerMethodPerSite["ALL"].pyrethrumSprayCatchAnFunestus.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.pyrethrumSprayCatchAnFunestus.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.pyrethrumSprayCatchAnFunestus.push specimen
               if(specimen.methodOfCollection is "Human-Landing Catch (HLC)")
-                data.vectorsPerMethodPerSite[caseLocation].humanLandingCatchAnFunestus.push specimen
-                data.vectorsPerMethodPerSite["ALL"].humanLandingCatchAnFunestus.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.humanLandingCatchAnFunestus.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.humanLandingCatchAnFunestus.push specimen
               if(specimen.methodOfCollection is "Pit-trap Catches (PTC)")
-                data.vectorsPerMethodPerSite[caseLocation].pitTrapAnFunestus.push specimen
-                data.vectorsPerMethodPerSite["ALL"].pitTrapAnFunestus.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.pitTrapAnFunestus.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.pitTrapAnFunestus.push specimen
               if(specimen.methodOfCollection is "CDC-Light Trap Catches(LTC)")
-                data.vectorsPerMethodPerSite[caseLocation].cdcLightTrapAnFunestus.push specimen
-                data.vectorsPerMethodPerSite["ALL"].cdcLightTrapAnFunestus.push specimen
+                data.vectorsPerMethodPerSite[caseLocation]?.cdcLightTrapAnFunestus.push specimen
+                data.vectorsPerMethodPerSite["ALL"]?.cdcLightTrapAnFunestus.push specimen
             if(specimen.morphologicalIdentification is "An costani")
-              data.identificationAndAbundance[caseLocation].anCostani.push specimen
-              data.identificationAndAbundance["ALL"].anCostani.push specimen
+              data.identificationAndAbundance[caseLocation]?.anCostani.push specimen
+              data.identificationAndAbundance["ALL"]?.anCostani.push specimen
             if(specimen.morphologicalIdentification is "An maculipalpis")
-              data.identificationAndAbundance[caseLocation].anMaculipalpis.push specimen
-              data.identificationAndAbundance["ALL"].anMaculipalpis.push specimen
+              data.identificationAndAbundance[caseLocation]?.anMaculipalpis.push specimen
+              data.identificationAndAbundance["ALL"]?.anMaculipalpis.push specimen
             if(specimen.morphologicalIdentification is "An nili")
-              data.identificationAndAbundance[caseLocation].anNili.push specimen
-              data.identificationAndAbundance["ALL"].anNili.push specimen
+              data.identificationAndAbundance[caseLocation]?.anNili.push specimen
+              data.identificationAndAbundance["ALL"]?.anNili.push specimen
             if(specimen.morphologicalIdentification is "Other species")
-              data.identificationAndAbundance[caseLocation].otherSpecies.push specimen
-              data.identificationAndAbundance["ALL"].otherSpecies.push specimen
-            data.identificationAndAbundance[caseLocation].allVectors.push specimen
-            data.identificationAndAbundance["ALL"].allVectors.push specimen
+              data.identificationAndAbundance[caseLocation]?.otherSpecies.push specimen
+              data.identificationAndAbundance["ALL"]?.otherSpecies.push specimen
+            data.identificationAndAbundance[caseLocation]?.allVectors.push specimen
+            data.identificationAndAbundance["ALL"]?.allVectors.push specimen
           options.finished?(data)
           resolve(data)
 
