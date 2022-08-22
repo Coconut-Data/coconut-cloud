@@ -65,10 +65,4 @@ cp config.defaults.json config.json
     location /analytics {
         alias /var/www/analytics/_attachments;
     }
-```
-
-4. (Optional) Add crontab to pull automatically
-
-```
-15 * * * * cd /var/www/analytics-dev; export GIT_SSH_COMMAND='ssh -i /root/.ssh/coconut_cloud_rsa'; git reset --hard origin/master; git pull origin master
-```    
+``` 
