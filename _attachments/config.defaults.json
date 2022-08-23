@@ -1,6 +1,7 @@
 {
   "targetUrl": "127.0.0.1",
   "targetDatabase": "zanzibar",
+  "jackfruitUrl": "127.0.0.1/jackfruit",
   "username": "admin",
   "password": "password"
 }
