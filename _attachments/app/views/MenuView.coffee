@@ -3,7 +3,7 @@ $ = require 'jquery'
 Backbone = require 'backbone'
 Backbone.$  = $
 User = require '../models/User'
-AppConfig = require '../config.json'
+AppConfig = require '../../config.json'
 camelize = require "underscore.string/camelize"
 
 class MenuView extends Backbone.View
